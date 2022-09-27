@@ -21,6 +21,8 @@ var _boxever_settings = {
 })();
 
 
+// #### VIEW EVENT ####
+
 // Place an anonymous function in the Boxever queue 
 _boxeverq.push(function() { 
     var searchEvent = {
@@ -39,3 +41,28 @@ _boxeverq.push(function() {
     // (<event msg>, <callback function>, <format>)
     Boxever.eventCreate(searchEvent, function(data){}, 'json');
 });
+
+
+// #### IDENTITY EVENT ####
+
+function login(email) {
+	
+	_boxeverq.push(function() { 
+    var identityEvent = {
+	  "type": "IDENTITY",
+	  "browser_id": Boxever.getID(),
+	  "channel": "WEB",
+	  "pos": "gm_pos_test_italy",
+	  "language": "EN",
+	  "currency": "EUR",
+	  "page": "home page",
+	  "email": email
+	};
+    // Invoke event create 
+    // (<event msg>, <callback function>, <format>)
+    Boxever.eventCreate(searchEvent, function(data){}, 'json');
+});
+	
+}
+
+
