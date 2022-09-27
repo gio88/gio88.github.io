@@ -19,3 +19,23 @@ var _boxever_settings = {
 	 s.src = 'https://d1mj578wat5n4o.cloudfront.net/boxever-1.4.9.min.js';
 	 var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
 })();
+
+
+// Place an anonymous function in the Boxever queue 
+_boxeverq.push(function() { 
+    var searchEvent = {
+	  "type": "VIEW",
+	  "browser_id": Boxever.getID(),
+	  "channel": "WEB",
+	  "pos": "gm_pos_test_italy",
+	  "language": "EN",
+	  "currency": "EUR",
+	  "page": "home page",
+	  "ext": {
+		"tileRef": 17
+	  }
+	};
+    // Invoke event create 
+    // (<event msg>, <callback function>, <format>)
+    Boxever.eventCreate(searchEvent, function(data){}, 'json');
+});
