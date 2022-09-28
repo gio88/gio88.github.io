@@ -73,9 +73,12 @@ function Add(productid,buttonId) {
   document.getElementById("checkoutPrice").innerHTML = "$" + data.cartTotal.toFixed(2);
   
   let productType = data.product[productid].primaryCategory;
+  let itemID = "ITEM_" + item_count;
   let productCurrency = data.product[productid].currency;
   let productPrice = data.product[productid].price;
   let productName = data.product[productid].productName;
+  
+  sendAddEvent(productType, itemID, productName, productPrice, productid, productCurrency);
   
 }
 

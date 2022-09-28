@@ -48,20 +48,51 @@ _boxeverq.push(function() {
 function login(email) {
 	
 	_boxeverq.push(function() { 
-    var identityEvent = {
-	  "type": "IDENTITY",
-	  "browser_id": Boxever.getID(),
-	  "channel": "WEB",
-	  "pos": "gm_pos_test_italy",
-	  "language": "EN",
-	  "currency": "EUR",
-	  "page": "home page",
-	  "email": email
-	};
-    // Invoke event create 
-    // (<event msg>, <callback function>, <format>)
-    Boxever.eventCreate(identityEvent, function(data){}, 'json');
-});
+		var identityEvent = {
+		  "type": "IDENTITY",
+		  "browser_id": Boxever.getID(),
+		  "channel": "WEB",
+		  "pos": "gm_pos_test_italy",
+		  "language": "EN",
+		  "currency": "EUR",
+		  "page": "home page",
+		  "email": email
+		};
+		// Invoke event create 
+		// (<event msg>, <callback function>, <format>)
+		Boxever.eventCreate(identityEvent, function(data){}, 'json');
+	});
+	
+}
+
+// #### ADD EVENT ####
+
+function sendAddEvent(productType, itemID, productName, productPrice, productID, productCurrency) {
+	
+	_boxeverq.push(function() { 
+		var addEvent = {
+		  "type": "ADD",
+		  "browser_id": Boxever.getID(),
+		  "channel": "WEB",
+		  "pos": "gm_pos_test_italy",
+		  "language": "EN",
+		  "currency": "EUR",
+		  "page": "home page",
+		  "product":{
+			  "type": productType,
+			  "item_id": itemID,
+			  "name": productName,
+			  "orderedAt": new Date.toISOString(),
+			  "quantity":1,
+			  "price": productPrice,
+			  "productId": productID,
+			  "currency": productCurrency
+		   }
+		};
+		// Invoke event create 
+		// (<event msg>, <callback function>, <format>)
+		Boxever.eventCreate(addEvent, function(data){}, 'json');
+	});
 	
 }
 
