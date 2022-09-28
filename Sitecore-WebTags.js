@@ -97,3 +97,47 @@ function sendAddEvent(productType, itemID, productName, productPrice, productID,
 }
 
 
+function sendConfirmEvent() {
+	
+	_boxeverq.push(function() { 
+		var confirmEvent = {
+		  "type": "CONFIRM",
+		  "browser_id": Boxever.getID(),
+		  "channel": "WEB",
+		  "pos": "gm_pos_test_italy",
+		  "language": "EN",
+		  "currency": "EUR",
+		  "page": "home page",
+		  "product": [
+			   {
+				  "item_id": "ITEM_1"
+			   }
+		   ]
+		};
+		// Invoke event create 
+		// (<event msg>, <callback function>, <format>)
+		Boxever.eventCreate(confirmEvent, function(data){}, 'json');
+	});
+	
+}
+
+function sendCheckoutEvent() {
+	
+	_boxeverq.push(function() { 
+		var checkoutEvent = {
+		  "type": "CHECKOUT",
+		  "browser_id": Boxever.getID(),
+		  "channel": "WEB",
+		  "pos": "gm_pos_test_italy",
+		  "language": "EN",
+		  "currency": "EUR",
+		  "page": "home page",
+		  "reference_id": "ORDER_111",
+		  "status": "PURCHASED"
+		};
+		// Invoke event create 
+		// (<event msg>, <callback function>, <format>)
+		Boxever.eventCreate(checkoutEvent, function(data){}, 'json');
+	});
+	
+}
