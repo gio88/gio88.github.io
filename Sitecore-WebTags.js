@@ -97,7 +97,7 @@ function sendAddEvent(productType, itemID, productName, productPrice, productID,
 }
 
 
-function sendConfirmEvent() {
+function sendConfirmEvent(confirmedProducts) {
 	
 	_boxeverq.push(function() { 
 		var confirmEvent = {
@@ -108,11 +108,7 @@ function sendConfirmEvent() {
 		  "language": "EN",
 		  "currency": "EUR",
 		  "page": "home page",
-		  "product": [
-			   {
-				  "item_id": "ITEM_1"
-			   }
-		   ]
+		  "product": confirmedProducts
 		};
 		// Invoke event create 
 		// (<event msg>, <callback function>, <format>)
