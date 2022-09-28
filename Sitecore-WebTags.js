@@ -60,7 +60,7 @@ function login(email) {
 	};
     // Invoke event create 
     // (<event msg>, <callback function>, <format>)
-    Boxever.eventCreate(searchEvent, function(data){}, 'json');
+    Boxever.eventCreate(identityEvent, function(data){}, 'json');
 });
 	
 }
