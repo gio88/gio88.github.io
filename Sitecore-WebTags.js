@@ -9,7 +9,7 @@ var _boxever_settings = {
 	target: 'https://api.boxever.com/v1.2', // Replace with your API target endpoint specific to your data center region
 	cookie_domain: '.github.io', // Replace with the top level cookie domain of the website that is being integrated e.g ".example.com" and not "www.example.com"
 	javascriptLibraryVersion: '{{javascriptLibraryVersion}}', // Replace with the latest Boxever JavaScript Library version"
-	pointOfSale: '{{pointOfSale}}', // Replace with the same point of sale configured in system settings"
+	pointOfSale: 'gm_pos_test_italy', // Replace with the same point of sale configured in system settings"
 	web_flow_target: 'https://d35vb5cccm4xzp.cloudfront.net', // Replace with path for the Amazon CloudFront CDN for Sitecore Personalize"
 	web_flow_config: { async: false, defer: false } // Customize the async and defer script loading attributes
 };
